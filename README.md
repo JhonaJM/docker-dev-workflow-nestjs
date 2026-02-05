@@ -35,13 +35,13 @@ Simula un entorno real donde Docker actúa como entorno aislado de desarrollo.
 
 Desde la raíz del proyecto:
 
-docker container run 
+`docker container run 
 --name nest-app 
 -w /app 
 -p 80:3000 
 -v "$(pwd)":/app 
 node:16-alpine3.16 
-sh -c "yarn install && yarn start:dev"
+sh -c "yarn install && yarn start:dev"`
 
 Abrir en el navegador:
 
@@ -63,7 +63,7 @@ Abrir en el navegador:
 
 Cualquier cambio en:
 
-src/
+`src/`
 
 se refleja automáticamente en el navegador gracias al bind mount.
 
@@ -71,13 +71,15 @@ se refleja automáticamente en el navegador gracias al bind mount.
 
 ## 🖥️ Acceder al contenedor
 
-docker exec -it nest-app /bin/sh
+`docker exec -it nest-app /bin/sh`
 
 Explorar filesystem:
 
-cd /app
-ls
-cat src/hello-world/hello-world.resolver.ts
+`cd /app`
+
+`ls`
+
+`cat src/hello-world/hello-world.resolver.ts`
 
 Modificar archivos desde el contenedor también afecta el host.
 
